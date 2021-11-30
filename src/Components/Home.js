@@ -13,8 +13,13 @@ return(
         <br/> 
         </div>
 
-        <div className="AnimeList">
-        <Link to="/MyFavorites">List of Anime A-Z</Link>
+        <div className="searchbar">
+        <Link to="/"> Search for an Anime</Link>
+        <br/>   
+        </div>
+
+        <div className="Upcoming">
+        <Link to="/Upcoming"> Upcoming Anime</Link>
         <br/>   
         </div>
 
@@ -23,8 +28,8 @@ return(
         <br/> 
         </div>
             
-        <div className="MyFavorites">
-        <Link to="/MyFavorites">My Favorites</Link>
+        <div className="Favorite">
+        <Link to="/MyFavorite">My Favorite</Link>
         <br/>   
         </div>
 

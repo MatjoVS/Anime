@@ -1,43 +1,47 @@
-import React, {useEffect} from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
+const TopTenAnime = () => {
+  // set the Hook useState tied to react
+  const [topTenAnimeArr, setTopTenAnimeArr] = React.useState([]);
 
-
-const TopTenAnime = ()=> {
-    // set the Hook useState tied to react
-    const [topTenAnimeArr, setTopTenAnimeArr] = React.useState([])
-
-    useEffect(() =>{
+  useEffect(() => {
     axios
-        .get( "https://api.jikan.moe/v3/top/anime/1/bypopularity" )
-        .then ((info)=>{
-            setTopTenAnimeArr(info.slice(0,10));
-            // console.log(info)
-        // console shows top 50 
-        // slice top 10   
-        }) 
-        // set catch error
-        .catch((err) => {
-           console.log('something is wrong', err);
-         })
-  },[]);      
-       console.log ([setTopTenAnimeArr])
-    
-        
+      .get("https://api.jikan.moe/v3/top/anime/1/bypopularity")
+      .then((info) => {
+        // console.log(info);
+        // console shows top 50
+        setTopTenAnimeArr(info.data.top.slice(0, 10));
+        // info.slice(0,10);
+        // slice top 10
+        // console.log(info.data.top.slice(0, 10));
+      })
+      // set catch error
+      .catch((err) => {
+        console.log("something is wrong", err);
+      });
+  }, []);
 
-return(
+  return (
     <div>
-    <header className="home-icon">
+      <main className="home-icon">
         <Link to="/">Home</Link>
         <br />
-      <p>Top 10 Anime</p>
-      <p>{topTenAnimeArr.title}</p>
-      </header>
+        <p>Top 10 Anime</p>
+        {topTenAnimeArr.map((anime) => {
+          return (
+            <div>
+            <a href={anime.url}>
+              <p>{anime.rank}  {anime.title}</p>
+              <img src={anime.image_url} alt="anime-card" />
+              </a>
+            </div>
+          );
+        })}
+      </main>
     </div>
-
-
-);
+  );
 };
 
 export default TopTenAnime;
