@@ -22,20 +22,19 @@ const Upcoming = () => {
 
   return (
     <div>
-      <header className="home-icon">
-        <Link to="/">Home</Link>
+      {/* <header className="home-icon"> */}
         <br />
         <p>Upcoming Anime</p>
         {upcomingAnimeArr.map((anime) => {
           return (
-            <div>
-              <p>{anime.title}</p>
+            <a href={anime.url} alt="anime">
               <img src={anime.image_url} alt="anime-card"  />
-            </div>
+              <p>{anime.title}</p>
+            </a>
           );
         })}
         ;
-      </header>
+      {/* </header> */}
     </div>
   );
 };

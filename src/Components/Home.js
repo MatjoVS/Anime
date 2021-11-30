@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom'
 const Home = ()=> {
 return(
     <div>
-        <header>
+        {/* <header>
         Anime Library
-        </header>
+        </header> */}
         
-        <div className="homepage">
+        {/* <div className="homepage">
         <Link to="/">Home</Link>
         <br/> 
-        </div>
+        </div> */}
 
         <div className="searchbar">
         <Link to="/"> Search for an Anime</Link>
@@ -29,7 +29,7 @@ return(
         </div>
             
         <div className="Favorite">
-        <Link to="/MyFavorite">My Favorite</Link>
+        <Link to="/Favorite">My Favorite</Link>
         <br/>   
         </div>
 
