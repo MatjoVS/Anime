@@ -31,6 +31,7 @@ function App() {
       <header className="home-icon">
         <Link className="title"
         to="/"><h1> Anime Library</h1></Link>
+        <img src="/Users/CasaDiNoi/Desktop/anime/src/Assets/goku-magic-cloud.jpeg" alt="goku" />
         <br />
       </header>
       <input 
@@ -76,7 +77,9 @@ function App() {
 
         <Route component={(props) => <NotFound {...props} />} />
       </Switch>
-  
+        <footer>
+          <img src="/Users/CasaDiNoi/Desktop/anime/src/Assets/ichigo.jpeg" alt="ichigo"/>
+        </footer>
     </div>
   );
   

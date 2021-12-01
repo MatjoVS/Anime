@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Home = ()=> {
 return(
-    <div>
+    <div className="Homepage">
         {/* <header>
         Anime Library
         </header> */}
@@ -13,10 +13,10 @@ return(
         <br/> 
         </div> */}
 
-        <div className="searchbar">
+        {/* <div className="searchbar">
         <Link to="/"> Search for an Anime</Link>
         <br/>   
-        </div>
+        </div> */}
 
         <div className="Upcoming">
         <Link to="/Upcoming"> Upcoming Anime</Link>
