@@ -3,36 +3,11 @@ import { Link } from 'react-router-dom'
 
 const Home = ()=> {
 return(
-    <div className="Homepage">
-        {/* <header>
-        Anime Library
-        </header> */}
+    <div className="homepage">
         
-        {/* <div className="homepage">
-        <Link to="/">Home</Link>
-        <br/> 
-        </div> */}
-
-        {/* <div className="searchbar">
-        <Link to="/"> Search for an Anime</Link>
-        <br/>   
-        </div> */}
-
-        <div className="Upcoming">
-        <Link to="/Upcoming"> Upcoming Anime</Link>
-        <br/>   
-        </div>
-
-        <div className="TopTenAnime">
-        <Link to="/TopTenAnime"> Top 10</Link>
-        <br/> 
-        </div>
-            
-        <div className="Favorite">
-        <Link to="/MyFavorite">My Favorite</Link>
-        <br/>   
-        </div>
-
+        <Link className="header-link" to="/Upcoming"> Upcoming Anime</Link>
+        <Link className="header-link" to="/TopTenAnime"> Top Ten Anime</Link>
+        <Link className="header-link" to="/MyFavorite">My Favorite</Link>
 
     </div>
 

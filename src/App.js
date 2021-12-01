@@ -8,6 +8,9 @@ import NotFound from "./Components/NotFound";
 import Favorite from "./Components/Favorite";
 import { Switch, Link, Route } from "react-router-dom";
 import axios from "axios";
+import Goku from "./Assets/goku-magic-cloud.jpeg"
+import Ichigo from "./Assets/ichigo.jpeg"
+
 
 function App() {
   const [searchText, setSearchText] = React.useState("");
@@ -29,9 +32,9 @@ function App() {
   return (
     <div className="App">
       <header className="home-icon">
+        <img className="goku"  src={Goku} alt="goku" />
         <Link className="title"
         to="/"><h1> Anime Library</h1></Link>
-        <img src="/Users/CasaDiNoi/Desktop/anime/src/Assets/goku-magic-cloud.jpeg" alt="goku" />
         <br />
       </header>
       <input 
@@ -57,7 +60,7 @@ function App() {
           )})
         }
         </div>  
-      <Switch>
+      <Switch className="page-links">
         <Route exact path="/" component={(props) => <Home {...props} />} />
         <Route
           exact
@@ -77,8 +80,8 @@ function App() {
 
         <Route component={(props) => <NotFound {...props} />} />
       </Switch>
-        <footer>
-          <img src="/Users/CasaDiNoi/Desktop/anime/src/Assets/ichigo.jpeg" alt="ichigo"/>
+          <footer>
+          <img src={Ichigo} alt="ichigo"/>
         </footer>
     </div>
   );
