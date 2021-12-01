@@ -21,15 +21,15 @@ const Upcoming = () => {
   }, []);
 
   return (
-    <div>
+    <div className="upcoming">
       {/* <header className="home-icon"> */}
+        <p className="upcoming-p">Upcoming Anime</p>
         <br />
-        <p>Upcoming Anime</p>
         {upcomingAnimeArr.map((anime) => {
           return (
             <a href={anime.url} alt="anime">
               <img src={anime.image_url} alt="anime-card"  />
-              <p>{anime.title}</p>
+              <p className="anime-title">{anime.title}</p>
             </a>
           );
         })}

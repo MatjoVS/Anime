@@ -29,7 +29,8 @@ function App() {
   return (
     <div className="App">
       <header className="home-icon">
-        <Link to="/"><h1> Anime Library</h1></Link>
+        <Link className="title"
+        to="/"><h1> Anime Library</h1></Link>
         <br />
       </header>
       <input 
@@ -42,7 +43,7 @@ function App() {
             setSearchText(e.target.value);
           }}
         />
-        <button onClick={search}>Search</button>
+        <button className="search-button" onClick={search}>Search</button>
         {/* <button>Reset</button> */}
 
         <div className="result">
@@ -75,9 +76,7 @@ function App() {
 
         <Route component={(props) => <NotFound {...props} />} />
       </Switch>
-      {/* <label for="searchbar">Search:</label> */}
-        
-          
+  
     </div>
   );
   

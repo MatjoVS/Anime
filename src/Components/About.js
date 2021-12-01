@@ -9,7 +9,7 @@ const About = ()=> {
       <main className="home-icon">
         <Link to="/">Home</Link>
         <br />
-        <p></p>
+        <p> Animes and Mangas </p>
       </main>
     </div>
   );

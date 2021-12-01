@@ -19,7 +19,7 @@ const Favorite = () => {
   }, []);
 
   return (
-    <div>
+    <div className="favorite">
         <Link to="/">Home</Link>
         <br />
         <p>Favorite Manga</p>
