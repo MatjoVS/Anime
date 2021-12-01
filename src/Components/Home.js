@@ -29,7 +29,7 @@ return(
         </div>
             
         <div className="Favorite">
-        <Link to="/Favorite">My Favorite</Link>
+        <Link to="/MyFavorite">My Favorite</Link>
         <br/>   
         </div>
 

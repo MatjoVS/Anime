@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Home from "./Components/Home";
 import TopTenAnime from "./Components/TopTenAnime";
-import MyFavorite from "./Components/About";
+import About from "./Components/About";
 import Upcoming from "./Components/Upcoming";
 import NotFound from "./Components/NotFound";
 import Favorite from "./Components/Favorite";
@@ -29,31 +29,11 @@ function App() {
   return (
     <div className="App">
       <header className="home-icon">
-        <Link to="/">Welcome to my Anime Library</Link>
+        <Link to="/"><h1> Anime Library</h1></Link>
         <br />
       </header>
-      <Switch>
-        <Route exact path="/" component={(props) => <Home {...props} />} />
-        <Route
-          exact
-          path="/TopTenAnime"
-          component={(props) => <TopTenAnime {...props} />}
-        />
-        <Route
-          exact
-          path="/MyFavorites"
-          component={(props) => <MyFavorite {...props} />}
-        />
-        <Route
-          exact
-          path="/Upcoming"
-          component={(props) => <Upcoming {...props} />}
-        />
-
-        <Route component={(props) => <NotFound {...props} />} />
-      </Switch>
-      {/* <label for="searchbar">Search:</label> */}
-        <input
+      <input 
+          className="search-bar"
           type="text"
           name="searchbar"
           placeholder= "Search anime ie: Naruto "
@@ -74,9 +54,29 @@ function App() {
           </a> 
           )})
         }
-         
-          
         </div>  
+      <Switch>
+        <Route exact path="/" component={(props) => <Home {...props} />} />
+        <Route
+          exact
+          path="/TopTenAnime"
+          component={(props) => <TopTenAnime {...props} />}
+        />
+        <Route
+          exact
+          path="/MyFavorite"
+          component={(props) => <Favorite {...props} />}
+        />
+        <Route
+          exact
+          path="/Upcoming"
+          component={(props) => <Upcoming {...props} />}
+        />
+
+        <Route component={(props) => <NotFound {...props} />} />
+      </Switch>
+      {/* <label for="searchbar">Search:</label> */}
+        
           
     </div>
   );

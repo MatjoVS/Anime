@@ -4,14 +4,14 @@ import axios from "axios";
 
 const Favorite = () => {
   // set the Hook useState tied to react
-  const [favorite, setFavorite] = React.useState('');
+  const [favorite, setFavorite] = React.useState({});
 
   useEffect(() => {
     axios
       .get("https://api.jikan.moe/v3/manga/656")
-      .then((info3) => {
-        console.log(info3)
-        // setFavorite(info3.data.manga.id)
+      .then((musashi) => {
+        console.log(musashi)
+         setFavorite(musashi.data)
       })
       .catch((err) => {
         console.log("something is wrong", err);
@@ -20,21 +20,14 @@ const Favorite = () => {
 
   return (
     <div>
-      {/* <main className="home-icon"> */}
         <Link to="/">Home</Link>
         <br />
         <p>Favorite Manga</p>
-        {favorite.map((manga) => {
-          return (
-            <div>
-            <a href={manga.url}>
-              <p>{manga.title}</p>
-              <img src={manga.image_url} alt="anime-card" />
-              </a>
-            </div>
-          );
-        })}
-      {/* </main> */}
+            <a href={favorite.url}>
+              <p>{favorite.title}</p>
+              <img src={favorite.image_url} alt="anime-card" />
+            </a>
+              <p>Synopsis:{favorite.synopsis}</p>
     </div>
   );
 };
